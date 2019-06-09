@@ -3,12 +3,14 @@ import ReactDOM from 'react-dom';
 import {GoogleMap, Marker, withGoogleMap, withScriptjs} from "react-google-maps";
 
 
-const App = withScriptjs(withGoogleMap((props) =>
+const App = withScriptjs(withGoogleMap(() =>
 	<GoogleMap
 		defaultZoom={8}
 		defaultCenter={{lat: 35.0856197, lng: -106.64924}}
 	>
-		{props.isMarkerShown && <Marker position={{lat: -34.397, lng: 150.644}}/>}
+	 <Marker
+		 position={{lat: 34.397, lng: -106.7}}
+	 />
 	</GoogleMap>
 ));
 
@@ -19,6 +21,7 @@ ReactDOM.render(
 	loadingElement={<div style={{height: `100%`}}/>}
 	containerElement={<div style={{height: `400px`}}/>}
 	mapElement={<div style={{height: `100%`}}/>}
+
 
 />, document.getElementById('root'));
 
