@@ -15,7 +15,7 @@ const App = withScriptjs(withGoogleMap((props) =>
 
 ReactDOM.render(
 	<App
-	googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places"
+	googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=AIzaSyCp8aJ6-c7UwVvh-tVeXsWQ3nYQrQ4c3r4"
 	loadingElement={<div style={{height: `100%`}}/>}
 	containerElement={<div style={{height: `400px`}}/>}
 	mapElement={<div style={{height: `100%`}}/>}
