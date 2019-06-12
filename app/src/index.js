@@ -5,6 +5,7 @@ import {library} from '@fortawesome/fontawesome-svg-core'
 	;
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faEnvelope, faMapMarker} from "@fortawesome/free-solid-svg-icons";
+import {MapFeature} from "./pages/home/MapFeature";
 
 library.add(faMapMarker);
 
@@ -35,9 +36,7 @@ const App = () => {
 				center={[-106.65, 35.33]}
 			>
 				{points.map(point => (
-					<Marker key={point.lat} coordinates={[point.lng, point.lat]} anchor="bottom"><FontAwesomeIcon
-						icon="map-marker" size="lg"/>
-					</Marker>
+					<MapFeature point={point} />
 				))};
 			</Map>
 
