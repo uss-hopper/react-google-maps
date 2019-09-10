@@ -1,16 +1,17 @@
 import React, {useState} from "react";
 
-import ReactMapboxGl  from "react-mapbox-gl/lib/index";
+import ReactMapboxGl from "react-mapbox-gl/lib/index";
 import {MapFeature} from "./MapFeature";
+import {Layer} from "react-mapbox-gl/lib-esm";
 
 export const Home = () => {
 
 
 	const [points, setPoints] = useState([
-		{lat: 35.332, lng: -106.652},
-		{lat: 35.339, lng: -106.656},
-		{lat: 35.40, lng: -106.666},
-		{lat: 35.23, lng: -106.4444}
+		{lat: 35.332, lng: -106.652, content: "hi"},
+		{lat: 35.339, lng: -106.656, content: "Bye"},
+		{lat: 35.40, lng: -106.666, content: "marty"},
+		{lat: 35.23, lng: -106.4444, content: "Stinks"}
 	]);
 
 
@@ -28,10 +29,12 @@ export const Home = () => {
 				}}
 				center={[-106.65, 35.33]}
 			>
-				{points.map(point => (
-						<MapFeature  point={point}/>
-					)
-				)};
+				<Layer>
+					{points.map(point => (
+							<MapFeature point={point}/>
+						)
+					)};
+				</Layer>
 			</Map>
 
 		</>

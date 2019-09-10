@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import ReactDOM from 'react-dom';
 import ReactMapboxGl, {Layer, Feature, Marker, Popup} from "react-mapbox-gl";
 import {library} from '@fortawesome/fontawesome-svg-core'
-	;
+import 'bootstrap/dist/css/bootstrap.css';
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faEnvelope, faMapMarker} from "@fortawesome/free-solid-svg-icons";
 import {MapFeature} from "./pages/home/MapFeature";
@@ -13,11 +13,11 @@ library.add(faMapMarker);
 const App = () => {
 
 
-	const [points, setPoints] = useState([
-		{lat: 35.332, lng: -106.652},
-		{lat: 35.339, lng: -106.656},
-		{lat: 35.40, lng: -106.666},
-		{lat: 35.23, lng: -106.4444}
+	const [objects, setPoints] = useState([
+		{lat: 35.332, lng: -106.652, content:"Hi"},
+		{lat: 35.339, lng: -106.656, content:"Bi"},
+		{lat: 35.40, lng: -106.666, content: "Marty"},
+		{lat: 35.23, lng: -106.4444, content:"Stinks"}
 	]);
 
 
@@ -35,8 +35,8 @@ const App = () => {
 				}}
 				center={[-106.65, 35.33]}
 			>
-				{points.map(point => (
-					<MapFeature point={point} />
+				{objects.map(object => (
+					<MapFeature object={object} />
 				))};
 			</Map>
 
